@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fba7ff68-753f-4162-b92b-ed54902bd841" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/offboard_test2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/ref.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/px4_ros.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/px4_ros.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/mavros_common.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/posctrl.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/launch/offboard_test.launch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/mavros_offboard_posctl_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/mavros_offboard_posctl_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/mavros_test_common.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/mavros_test_common.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/offboard_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/offboard_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/offboard_test2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/ref.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/ref.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,15 +19,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DockManager">
-    <window id="2">
+    <window id="3">
       <content type="file-editors">
         <state>
           <leaf>
             <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/scripts/mavros_offboard_posctl_test.py">
+              <entry file="file://$PROJECT_DIR$/scripts/posctrl.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="145">
-                    <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+                  <state relative-caret-position="425">
+                    <caret line="224" lean-forward="true" selection-start-line="224" selection-end-line="224" />
+                    <folding>
+                      <element signature="e#39#51#0" expanded="true" />
+                    </folding>
                   </state>
                 </provider>
               </entry>
@@ -35,15 +41,93 @@
     </window>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scripts/offboard_test2.py">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/ref.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="657">
+              <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
               <folding>
-                <element signature="e#0#12#0" expanded="true" />
+                <element signature="e#39#51#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/launch/pos_control.launch">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="145">
+              <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/launch/ref.launch">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="494">
+              <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/mavros_offboard_posctl_test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3683">
+              <caret line="169" lean-forward="true" selection-start-line="169" selection-end-line="169" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/pos_control.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="754">
+              <caret line="145" column="43" lean-forward="true" selection-start-line="145" selection-start-column="43" selection-end-line="145" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../devel/lib/python2.7/dist-packages/mavros_msgs/msg/_PositionTarget.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3045">
+              <caret line="105" column="6" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/mavros_test_common.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="58">
+              <caret line="137" column="11" selection-start-line="137" selection-start-column="11" selection-end-line="137" selection-end-column="11" />
+              <folding>
+                <element signature="e#23#54#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/mavros_common.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="599">
+              <caret line="205" column="46" selection-start-line="205" selection-start-column="46" selection-end-line="205" selection-end-column="46" />
+              <folding>
+                <element signature="e#24#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/launch/mavros_test.launch">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="43">
+              <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -57,6 +141,13 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>off</find>
+      <find>test</find>
+      <find>unittest</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -64,16 +155,28 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/scripts/ref.py" />
-        <option value="$PROJECT_DIR$/scripts/offboard_test.py" />
         <option value="$PROJECT_DIR$/scripts/offboard_test2.py" />
+        <option value="$PROJECT_DIR$/launch/offboard_test.launch" />
+        <option value="$PROJECT_DIR$/launch/mavros_test.launch" />
+        <option value="$PROJECT_DIR$/launch/legacy.launch" />
+        <option value="$PROJECT_DIR$/scripts/MavrosCommon.py" />
+        <option value="$PROJECT_DIR$/scripts/mavros_common.py" />
+        <option value="$PROJECT_DIR$/scripts/offboard_test.py" />
+        <option value="$PROJECT_DIR$/scripts/mavros_basic.py" />
+        <option value="$PROJECT_DIR$/scripts/pos_control.py" />
+        <option value="$PROJECT_DIR$/launch/pos_control.launch" />
+        <option value="$PROJECT_DIR$/scripts/mavros_test_common.py" />
+        <option value="$PROJECT_DIR$/launch/ref.launch" />
+        <option value="$PROJECT_DIR$/scripts/mavros_offboard_posctl_test.py" />
+        <option value="$PROJECT_DIR$/scripts/posctrl.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="442" />
-    <option name="y" value="701" />
-    <option name="width" value="1741" />
-    <option name="height" value="1307" />
+    <option name="x" value="1663" />
+    <option name="y" value="599" />
+    <option name="width" value="1806" />
+    <option name="height" value="1461" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -86,6 +189,11 @@
             <path>
               <item name="px4_ros" type="b2602c69:ProjectViewProjectNode" />
               <item name="px4_ros" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="px4_ros" type="b2602c69:ProjectViewProjectNode" />
+              <item name="px4_ros" type="462c0819:PsiDirectoryNode" />
+              <item name="launch" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="px4_ros" type="b2602c69:ProjectViewProjectNode" />
@@ -116,6 +224,50 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="Python.posctrl">
+    <configuration name="posctrl" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="px4_ros" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/posctrl.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in offboard_test.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="px4_ros" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/scripts/offboard_test.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.posctrl" />
+        <item itemvalue="Python tests.pytest in offboard_test.py" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -129,24 +281,41 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="pytest_in_offboard_test_py - 2019.05.10 at 12h 44m 37s.xml">
+      <configuration name="pytest in offboard_test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_offboard_test_py - 2019.05.10 at 12h 45m 27s.xml">
+      <configuration name="pytest in offboard_test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_offboard_test_py - 2019.05.10 at 12h 45m 42s.xml">
+      <configuration name="pytest in offboard_test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_offboard_test_py - 2019.05.10 at 12h 49m 28s.xml">
+      <configuration name="pytest in offboard_test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_offboard_test_py - 2019.05.10 at 12h 49m 58s.xml">
+      <configuration name="pytest in offboard_test.py" configurationId="tests" />
+    </history-entry>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="442" y="701" width="1741" height="1307" extended-state="0" />
+    <frame x="1663" y="599" width="1806" height="1461" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28114086" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20022434" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3249445" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -160,26 +329,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/offboard_test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="806">
-          <caret line="80" column="52" selection-start-line="80" selection-start-column="52" selection-end-line="80" selection-end-column="52" />
-          <folding>
-            <element signature="e#39#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/ref.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="920">
-          <caret line="169" lean-forward="true" selection-start-line="169" selection-end-line="169" />
-          <folding>
-            <element signature="e#39#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///opt/ros/kinetic/lib/python2.7/dist-packages/mavros_msgs/msg/_PositionTarget.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-219">
@@ -187,26 +336,136 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../devel/lib/python2.7/dist-packages/mavros_msgs/msg/_ExtendedState.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+        <state relative-caret-position="1247">
+          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/_jb_pytest_runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="230" column="8" selection-start-line="230" selection-start-column="8" selection-end-line="230" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/launch/offboard_test.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="754">
+          <caret line="26" column="65" selection-start-line="26" selection-start-column="65" selection-end-line="26" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/launch/legacy.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="754">
+          <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/offboard_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="119" column="28" lean-forward="true" selection-start-line="119" selection-start-column="28" selection-end-line="119" selection-end-column="28" />
+          <folding>
+            <element signature="e#24#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/mavros_common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="599">
+          <caret line="205" column="46" selection-start-line="205" selection-start-column="46" selection-end-line="205" selection-end-column="46" />
+          <folding>
+            <element signature="e#24#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/launch/ref.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../devel/lib/python2.7/dist-packages/mavros_msgs/msg/_PositionTarget.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3045">
+          <caret line="105" column="6" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/ref.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="657">
+          <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
+          <folding>
+            <element signature="e#39#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/launch/mavros_test.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="11" column="50" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/launch/pos_control.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/mavros_offboard_posctl_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="3683">
+          <caret line="169" lean-forward="true" selection-start-line="169" selection-end-line="169" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/offboard_test2.py">
+    <entry file="file://$PROJECT_DIR$/scripts/pos_control.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="754">
+          <caret line="145" column="43" lean-forward="true" selection-start-line="145" selection-start-column="43" selection-end-line="145" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/posctrl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="224" lean-forward="true" selection-start-line="224" selection-end-line="224" />
           <folding>
-            <element signature="e#0#12#0" expanded="true" />
+            <element signature="e#39#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/mavros_test_common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="137" column="11" selection-start-line="137" selection-start-column="11" selection-end-line="137" selection-end-column="11" />
+          <folding>
+            <element signature="e#23#54#0" expanded="true" />
           </folding>
         </state>
       </provider>
