@@ -21,9 +21,10 @@
 """
     Position sample shows the position of the ZED camera in a OpenGL window.
 """
-from OpenGL.GLUT import *
+
 import pyzed.sl as sl
 import threading
+
 
 
 def main():
@@ -76,7 +77,7 @@ def run(cam, runtime, camera_pose, py_translation):
 
                 pose_data = camera_pose.pose_data(sl.Transform())
 
-                print(pose_data)
+                print(tx, ty, tz)
 
         else:
             sl.c_sleep_ms(1)
