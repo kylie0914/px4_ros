@@ -68,7 +68,7 @@ class OffboardCtrl:
         self.desired_pos.pose.position.x = 0
         self.desired_pos.pose.position.y = 0
         self.desired_pos.pose.position.z = 0
-        self.radius = 1
+        self.radius = 0.2
         self.pos_setpoint_pub = rospy.Publisher(
             'mavros/setpoint_position/local', PoseStamped, queue_size=1)
 
@@ -202,7 +202,7 @@ def main():
     agent.wait_for_topics(60)
 
 
-    pos_takeoff = [0, 0, 3]
+    pos_takeoff = [0, 0, 5]
     pos_land = [0, 0, 0]
 
     loop_rate = rospy.Rate(10)
@@ -216,6 +216,11 @@ def main():
     while(agent.is_at_position(pos_takeoff, agent.radius)==False):
         loop_rate.sleep()
     print("Take off Done")
+
+    # 10 sec hovering
+    hov_time = 100  # 10 Hz update
+    for _ in range(hov_time):
+        loop_rate.sleep()
 
 
     landing_condition = mavutil.mavlink.MAV_LANDED_STATE_ON_GROUND
