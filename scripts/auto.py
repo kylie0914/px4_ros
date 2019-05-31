@@ -3,7 +3,9 @@
 import rospy
 import numpy as np
 from pymavlink import mavutil
+import rospkg
 from offboard_comm import *
+from dronet_ros import *
 
 
 def main():
@@ -11,24 +13,24 @@ def main():
 
     print("node started")
     agent = OffboardCtrl()
-    print("Class loaded")
+    print("Offboard Class loaded")
     agent.wait_for_topics(20)
     print("Topic loaded")
 
-    # pose
-    # Yaw, X, Y, Z
-    pos_takeoff = [0, 0, 0, 2]
-    pos1 = [0, -5, 3, 2]
-    pos2 = [0, 1, 1, -0.5]
-    pos3 = [0, -3, -2, 1.5]
-    loop_rate = rospy.Rate(10)
+    rospack = rospkg.RosPack()
+    pkg_path = rospack.get_path('px4_ros')
+    json_path = pkg_path + '/models/model_struct.json'
+    weights_path = pkg_path + '/models/best_weights.h5'
+    dronet = zedRosDronet(json_path=json_path, weights_path=weights_path)
 
-    print("Test trajectories")
+    loop_rate = rospy.Rate(30)
 
     # agent.set_mode_srv(custom_mode='OFFBOARD')
     # agent.set_arming_srv(True)
 
-    # agent.reach_position(pos_takeoff, 30)
+    # pose
+    # Yaw, X, Y, Z
+    pos_takeoff = [0, 0, 0, 1.5]
 
     agent.halt()
     print("Set desired as current position - Init")
@@ -41,25 +43,26 @@ def main():
         loop_rate.sleep()
     print("Take off Done")
 
-    for _ in range(hov_time):
-        loop_rate.sleep()
-
-    # agent.dronet_mv(pos_takeoff)
-    agent.dronet_mv(pos1)
-    agent.dronet_mv(pos2)
-    agent.dronet_mv(pos3)
 
     for _ in range(hov_time):
         loop_rate.sleep()
+
+
+    while not dronet.isLand:
+        target = dronet.prediction()
+        agent.dronet_mv(target)
+        loop_rate.sleep()
+
 
     landing_condition = mavutil.mavlink.MAV_LANDED_STATE_ON_GROUND
     agent.set_mode_srv(custom_mode="AUTO.LAND")
-    while (agent.extended_state.landed_state != landing_condition):
+    while(agent.extended_state.landed_state != landing_condition):
         loop_rate.sleep()
 
     print("Landing done")
 
     agent.set_arming_srv(False)
+
 
 
 if __name__ == '__main__':
