@@ -70,7 +70,7 @@ class OffboardCtrl:
         self.desired_pos.pose.position.x = 0
         self.desired_pos.pose.position.y = 0
         self.desired_pos.pose.position.z = 0
-        self.radius = 0.2
+        self.radius = 1.0
         self.pos_setpoint_pub = rospy.Publisher(
             'mavros/setpoint_position/local', PoseStamped, queue_size=1)
 
