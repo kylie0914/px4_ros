@@ -63,6 +63,8 @@ class OffboardCtrl:
                                               self.extended_state_callback)
 
 
+
+
         # Publisher
         self.desired_pos = PoseStamped()
         self.desired_pos.pose.position.x = 0
@@ -76,7 +78,6 @@ class OffboardCtrl:
         self.pos_thread = Thread(target=self.send_pos, args=())
         self.pos_thread.daemon = True
         self.pos_thread.start()
-
 
     def send_pos(self):
         rate = rospy.Rate(20)  # Hz
@@ -92,6 +93,12 @@ class OffboardCtrl:
             except rospy.ROSInterruptException:
                 pass
 
+
+    def halt(self):
+        self.desired_pos.pose.position.x = self.local_position.pose.position.x
+        self.desired_pos.pose.position.y = self.local_position.pose.position.y
+        self.desired_pos.pose.position.z = self.local_position.pose.position.z
+        
 
 
     def altitude_callback(self, data):
@@ -144,7 +151,7 @@ class OffboardCtrl:
 
     def is_at_position(self, d_pos, offset):
         """offset: meters"""
-        desired = np.array(d_pos)
+        desired = np.array(d_pos[0:3])
         pos = np.array((self.local_position.pose.position.x,
                         self.local_position.pose.position.y,
                         self.local_position.pose.position.z))
@@ -160,7 +167,7 @@ class OffboardCtrl:
         self.desired_pos.pose.position.z = d_pos[2]
 
         # For demo purposes we will lock yaw/heading to north.
-        yaw_degrees = 0  # North
+        yaw_degrees = d_pos[3]  # North
         yaw = math.radians(yaw_degrees)
         quaternion = quaternion_from_euler(0, 0, yaw)
         self.desired_pos.pose.orientation = Quaternion(*quaternion)
@@ -173,7 +180,7 @@ class OffboardCtrl:
         self.desired_pos.pose.position.y = d_pos[1]
         self.desired_pos.pose.position.z = d_pos[2]
         # For demo purposes we will lock yaw/heading to north.
-        yaw_degrees = 0  # North
+        yaw_degrees = d_pos[3]  # North
         yaw = math.radians(yaw_degrees)
         quaternion = quaternion_from_euler(0, 0, yaw)
         self.desired_pos.pose.orientation = Quaternion(*quaternion)
@@ -198,27 +205,50 @@ def main():
 
     rospy.init_node('setpoint_node', anonymous=True)
 
+    print("node started")
     agent = OffboardCtrl()
-    agent.wait_for_topics(60)
+    print("Class loaded")
+    agent.wait_for_topics(20)
+    print("Topic loaded")
 
 
-    pos_takeoff = [0, 0, 5]
-    pos_land = [0, 0, 0]
-
+    pos_takeoff = [0, 0, 2, 0]
+    pos0 = [0, 0, 2, 45]
+    pos1 = [4, -2, 2, 45]
+    pos_land = [0, 0, 0, 0]
     loop_rate = rospy.Rate(10)
 
+    print("Test trajectories")
 
     #agent.set_mode_srv(custom_mode='OFFBOARD')
     #agent.set_arming_srv(True)
 
     #agent.reach_position(pos_takeoff, 30)
+    
+    agent.halt()
+    print("Set desired as current position - Init")
+    
     agent.move_to(pos_takeoff)
     while(agent.is_at_position(pos_takeoff, agent.radius)==False):
         loop_rate.sleep()
     print("Take off Done")
 
     # 10 sec hovering
-    hov_time = 100  # 10 Hz update
+    hov_time = 30  # 10 Hz update
+    for _ in range(hov_time):
+        loop_rate.sleep()
+        
+    agent.move_to(pos0)
+    while(agent.is_at_position(pos0, agent.radius)==False):
+        loop_rate.sleep()
+        
+    for _ in range(hov_time):
+        loop_rate.sleep()
+
+    agent.move_to(pos1)
+    while(agent.is_at_position(pos1, agent.radius)==False):
+        loop_rate.sleep()
+    
     for _ in range(hov_time):
         loop_rate.sleep()
 
