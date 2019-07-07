@@ -42,11 +42,23 @@ class Lidar:
         theta_deg = np.rad2deg(theta)
         theta_int = int(math.ceil(theta_deg))
 
-        what = self.filtered_data
+        #what = self.filtered_data
 
         possible_head = []
         for i in range(360):
-            scan = what[(i-theta_int):(i+theta_int)]
+            if i < theta_int:
+                scan_pos = self.filtered_data[:theta_int+i+1]
+                scan_neg = self.filtered_data[-(theta_int-i):]
+                scan = np.concatenate((scan_neg, scan_pos), axis=None)
+
+
+            elif i < 360-theta_int:
+                scan = self.filtered_data[(i-theta_int):(i+theta_int)]
+
+            else:
+                scan_pos
+                scan_neg
+
             if scan.min >= dist:
                 avg_dist = np.mean(scan)
                 possible_head.append([i, avg_dist])
