@@ -71,6 +71,8 @@ class OffboardCtrl:
         self.z_in = 0.1
         self.z_ub = 2.7  # Height upper bound
         self.z_lb = 0.5  # Height lower bound
+        self.yaw_test=0
+
         self.pos_setpoint_pub = rospy.Publisher(
             'mavros/setpoint_position/local', PoseStamped, queue_size=1)
 
@@ -98,6 +100,7 @@ class OffboardCtrl:
         self.y_target = 0
         self.z_target = 0
         self.p_gain = 1.0
+        self.yaw_p_gain = 0.5
         self.cmd_vel_pub = rospy.Publisher(
             'mavros/setpoint_velocity/cmd_vel', TwistStamped, queue_size=1)
 
@@ -134,18 +137,31 @@ class OffboardCtrl:
             y_error = self.desired_pos.pose.position.y - self.local_position.pose.position.y
             z_error = self.desired_pos.pose.position.z - self.local_position.pose.position.z
 
+
+
+            desired_quat = self.desired_pos.pose.orientation
+            desired_eulers = euler_from_quaternion([desired_quat.x, desired_quat.y, desired_quat.z, desired_quat.w])
+            desired_yaw = desired_eulers[2]
+
+            local_quat = self.local_position.pose.orientation  
+            local_eulers = euler_from_quaternion([local_quat.x, local_quat.y, local_quat.z, local_quat.w])   
+            local_yaw = local_eulers[2]       
+
+            yaw_error = desired_yaw - local_yaw
+
             self.desired_vel.twist.linear.x = self.p_gain * x_error
             self.desired_vel.twist.linear.y = self.p_gain * y_error	
             self.desired_vel.twist.linear.z = self.p_gain * z_error
+            self.desired_vel.twist.angular.z = self.yaw_p_gain * yaw_error
 
-#	    if self.desired_vel.twist.linear.x >= 0.5: self.desired_vel.twist.linear.x  = 0.5
-#	    elif self.desired_vel.twist.linear.x <= -0.5: self.desired_vel.twist.linear.x  = -0.5
-#
-#	    if self.desired_vel.twist.linear.y >= 0.5: self.desired_vel.twist.linear.y  = 0.5
-#	    elif self.desired_vel.twist.linear.y <= -0.5: self.desired_vel.twist.linear.y  = -0.5
-#
- #   	    if self.desired_vel.twist.linear.z >= 0.5: self.desired_vel.twist.linear.z  = 0.5
-	#    elif self.desired_vel.twist.linear.z <= -0.5: self.desired_vel.twist.linear.z  = -0.5
+            if self.desired_vel.twist.linear.x >= 0.5: self.desired_vel.twist.linear.x  = 0.5
+            elif self.desired_vel.twist.linear.x <= -0.5: self.desired_vel.twist.linear.x  = -0.5
+
+            if self.desired_vel.twist.linear.y >= 0.5: self.desired_vel.twist.linear.y  = 0.5
+            elif self.desired_vel.twist.linear.y <= -0.5: self.desired_vel.twist.linear.y  = -0.5
+
+            if self.desired_vel.twist.linear.z >= 0.5: self.desired_vel.twist.linear.z  = 0.5
+            elif self.desired_vel.twist.linear.z <= -0.5: self.desired_vel.twist.linear.z  = -0.5
             
             self.desired_vel.header.stamp = rospy.Time.now()
             self.cmd_vel_pub.publish(self.desired_vel)
@@ -160,6 +176,7 @@ class OffboardCtrl:
         self.desired_pos.pose.position.x = self.local_position.pose.position.x
         self.desired_pos.pose.position.y = self.local_position.pose.position.y
         self.desired_pos.pose.position.z = self.local_position.pose.position.z
+
 
     def altitude_callback(self, data):
         self.altitude = data
@@ -213,6 +230,17 @@ class OffboardCtrl:
 
         return np.linalg.norm(desired - pos) < offset
 
+    def is_at_orientation(self, d_yaw, offset):
+        """offset : radian"""
+        local_quat = self.local_position.pose.orientation
+        eulers = euler_from_quaternion([local_quat.x, local_quat.y, local_quat.z, local_quat.w])
+        yaw_local = eulers[2] #radians
+
+        print( "desired_yaw:",math.radians(d_yaw), "local_yaw:",yaw_local)
+        if abs(yaw_local - math.radians(d_yaw)) <= offset:
+            return False
+        return True
+
     def move_to(self, d_pos):
         """timeout(int): seconds"""
         # set a position setpoint
@@ -223,6 +251,7 @@ class OffboardCtrl:
         # For demo purposes we will lock yaw/heading to north.
         yaw_degrees = d_pos[0]  # North
         yaw = math.radians(yaw_degrees)
+        self.yaw_test = yaw_degrees
         quaternion = quaternion_from_euler(0, 0, yaw)
         self.desired_pos.pose.orientation = Quaternion(*quaternion)
 
