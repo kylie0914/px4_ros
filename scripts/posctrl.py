@@ -18,11 +18,10 @@ def main():
     # pose
     # Yaw, X, Y, Z
     pos_takeoff = [0, 0, 0, 2]
-    pos1 = [0, -5, 3, 2]
-    pos2 = [0, 1, 1, -0.5]
-    pos3 = [0, -3, -2, 1.5]
+    pos1 = [0, 5, 0, 2]
+    pos2 = [-90, 5, 0, 2]
+    pos3 = [-90, 5, 3, 2]
     loop_rate = rospy.Rate(10)
-
     print("Test trajectories")
 
     # agent.set_mode_srv(custom_mode='OFFBOARD')
@@ -36,6 +35,7 @@ def main():
     # 3 sec hovering
     hov_time = 30  # 10 Hz update
 
+
     agent.move_to(pos_takeoff)
     while (agent.is_at_position(pos_takeoff, agent.radius) == False):
         loop_rate.sleep()
@@ -45,9 +45,21 @@ def main():
         loop_rate.sleep()
 
     # agent.dronet_mv(pos_takeoff)
-    agent.dronet_mv(pos1)
-    agent.dronet_mv(pos2)
-    agent.dronet_mv(pos3)
+    agent.move_to(pos1)
+    print("Pos 1 Done")
+    while (agent.is_at_position(pos1, agent.radius) == False):
+        loop_rate.sleep()
+
+    agent.move_to(pos2)
+    print("Pos 2 Done")
+    while (agent.is_at_position(pos2, agent.radius) == False):
+        loop_rate.sleep()
+
+
+    agent.move_to(pos3)
+    print("Pos 3 Done")
+    while (agent.is_at_position(pos3, agent.radius) == False):
+        loop_rate.sleep()
 
     for _ in range(hov_time):
         loop_rate.sleep()
@@ -63,4 +75,5 @@ def main():
 
 
 if __name__ == '__main__':
+    print("@@@@@@@@@@@@2-------------ddkdkdkdkkddkkdkd")
     main()

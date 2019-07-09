@@ -3,7 +3,7 @@
 import rospy
 import math
 import numpy as np
-from geometry_msgs.msg import PoseStamped, Quaternion
+from geometry_msgs.msg import PoseStamped, Quaternion, TwistStamped
 from mavros_msgs.msg import Altitude, ExtendedState, State
 from mavros_msgs.srv import CommandBool, ParamGet, SetMode
 from pymavlink import mavutil
@@ -75,9 +75,37 @@ class OffboardCtrl:
             'mavros/setpoint_position/local', PoseStamped, queue_size=1)
 
         # send setpoints in seperate thread to better prevent failsafe
-        self.pos_thread = Thread(target=self.send_pos, args=())
-        self.pos_thread.daemon = True
-        self.pos_thread.start()
+        #self.pos_thread = Thread(target=self.send_pos, args=())
+        #self.pos_thread.daemon = True
+        #self.pos_thread.start()
+	# ----------------               -------------------#
+
+        # Publishers
+        self.desired_vel = TwistStamped()
+        self.desired_vel.twist.angular.z = 0
+        self.desired_vel.twist.linear.x = 0
+        self.desired_vel.twist.linear.y = 0
+        self.desired_vel.twist.linear.z = 0
+
+        #self.radius = 0.3
+        #self.yaw_th = 0.05
+        self.yaw_current = 0
+        self.isLand = False
+        self.yawrate = 0.5
+        self.xvel = 0.5
+
+        self.x_target = 0
+        self.y_target = 0
+        self.z_target = 0
+        self.p_gain = 1.0
+        self.cmd_vel_pub = rospy.Publisher(
+            'mavros/setpoint_velocity/cmd_vel', TwistStamped, queue_size=1)
+
+        self.vel_thread = Thread(target=self.send_vel_from_pos, args=())
+        self.vel_thread.daemon = True
+        self.vel_thread.start()
+
+
 
     def send_pos(self):
         rate = rospy.Rate(30)  # Hz
@@ -92,6 +120,41 @@ class OffboardCtrl:
                 rate.sleep()
             except rospy.ROSInterruptException:
                 pass
+
+    #--------------  pos to vel -------------------#
+    def send_vel_from_pos(self):
+        rate = rospy.Rate(30)  # Hz
+        self.desired_vel.header = Header()
+        self.desired_vel.header.frame_id = "base_link"
+
+        #while not rospy.is_shutdown():
+        while not self.isLand:
+
+            x_error = self.desired_pos.pose.position.x - self.local_position.pose.position.x
+            y_error = self.desired_pos.pose.position.y - self.local_position.pose.position.y
+            z_error = self.desired_pos.pose.position.z - self.local_position.pose.position.z
+
+            self.desired_vel.twist.linear.x = self.p_gain * x_error
+            self.desired_vel.twist.linear.y = self.p_gain * y_error	
+            self.desired_vel.twist.linear.z = self.p_gain * z_error
+
+#	    if self.desired_vel.twist.linear.x >= 0.5: self.desired_vel.twist.linear.x  = 0.5
+#	    elif self.desired_vel.twist.linear.x <= -0.5: self.desired_vel.twist.linear.x  = -0.5
+#
+#	    if self.desired_vel.twist.linear.y >= 0.5: self.desired_vel.twist.linear.y  = 0.5
+#	    elif self.desired_vel.twist.linear.y <= -0.5: self.desired_vel.twist.linear.y  = -0.5
+#
+ #   	    if self.desired_vel.twist.linear.z >= 0.5: self.desired_vel.twist.linear.z  = 0.5
+	#    elif self.desired_vel.twist.linear.z <= -0.5: self.desired_vel.twist.linear.z  = -0.5
+            
+            self.desired_vel.header.stamp = rospy.Time.now()
+            self.cmd_vel_pub.publish(self.desired_vel)
+            try:  # prevent garbage in console output when thread is killed
+                rate.sleep()
+            except rospy.ROSInterruptException:
+                pass
+
+
 
     def halt(self):
         self.desired_pos.pose.position.x = self.local_position.pose.position.x
@@ -162,6 +225,8 @@ class OffboardCtrl:
         yaw = math.radians(yaw_degrees)
         quaternion = quaternion_from_euler(0, 0, yaw)
         self.desired_pos.pose.orientation = Quaternion(*quaternion)
+
+
 
     def dronet_mv_yaw(self, rel_pos):
         # Yaw control first
