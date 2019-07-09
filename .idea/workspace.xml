@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fba7ff68-753f-4162-b92b-ed54902bd841" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/turtlebot_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/px4_ros.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/px4_ros.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/2dlidar.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/2dlidar.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/turtlebot_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/turtlebot_test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +17,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/2dlidar.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="854">
-              <caret line="73" column="116" lean-forward="true" selection-start-line="70" selection-start-column="34" selection-end-line="73" selection-end-column="116" />
+            <state relative-caret-position="1755">
+              <caret line="73" column="116" selection-start-line="70" selection-start-column="34" selection-end-line="73" selection-end-column="116" />
               <folding>
                 <element signature="e#23#35#0" expanded="true" />
               </folding>
@@ -29,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/turtlebot_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="67" column="81" lean-forward="true" selection-start-line="67" selection-start-column="81" selection-end-line="67" selection-end-column="81" />
+            <state relative-caret-position="351">
+              <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
               <folding>
                 <element signature="e#1#13#0" expanded="true" />
               </folding>
@@ -97,10 +97,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="884" />
-    <option name="y" value="127" />
-    <option name="width" value="1933" />
-    <option name="height" value="1930" />
+    <option name="x" value="277" />
+    <option name="y" value="106" />
+    <option name="width" value="2015" />
+    <option name="height" value="1218" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -133,7 +133,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/myGit/ros_tutorials/turtlesim" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -295,10 +295,9 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="884" y="127" width="1933" height="1930" extended-state="0" />
-    <editor active="true" />
+    <frame x="277" y="106" width="2015" height="1218" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.186911" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17163049" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -318,27 +317,9 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///opt/ros/kinetic/lib/python2.7/dist-packages/mavros_msgs/msg/_State.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1354">
-          <caret line="50" column="6" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///opt/ros/kinetic/lib/python2.7/dist-packages/mavros_msgs/msg/_PositionTarget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-219">
-          <caret line="105" column="6" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../devel/lib/python2.7/dist-packages/mavros_msgs/msg/_ExtendedState.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///opt/ros/kinetic/lib/python2.7/dist-packages/mavros_msgs/msg/_State.py" />
+    <entry file="file:///opt/ros/kinetic/lib/python2.7/dist-packages/mavros_msgs/msg/_PositionTarget.py" />
+    <entry file="file://$PROJECT_DIR$/../../devel/lib/python2.7/dist-packages/mavros_msgs/msg/_ExtendedState.py" />
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1247">
@@ -370,13 +351,7 @@
     <entry file="file://$PROJECT_DIR$/scripts/mavros_common.py" />
     <entry file="file://$PROJECT_DIR$/launch/mavros_test.launch" />
     <entry file="file://$PROJECT_DIR$/scripts/mavros_test_common.py" />
-    <entry file="file://$PROJECT_DIR$/../../devel/lib/python2.7/dist-packages/mavros_msgs/msg/_PositionTarget.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1241">
-          <caret line="105" column="6" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../devel/lib/python2.7/dist-packages/mavros_msgs/msg/_PositionTarget.py" />
     <entry file="file://$PROJECT_DIR$/scripts/mavros_offboard_posctl_test.py" />
     <entry file="file://$PROJECT_DIR$/scripts/zed_test.py" />
     <entry file="file://$PROJECT_DIR$/scripts/zed_to_ros.py" />
@@ -397,27 +372,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/keyboard/_generic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/keyboard/_nixcommon.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="914">
-          <caret line="173" selection-start-line="173" selection-end-line="173" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/keyboard/_nixkeyboard.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="108" selection-start-line="108" selection-end-line="108" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/keyboard/_generic.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/keyboard/_nixcommon.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/keyboard/_nixkeyboard.py" />
     <entry file="file://$PROJECT_DIR$/scripts/dronet_ros.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-9">
@@ -428,13 +385,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/keyboard/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="193" selection-start-line="193" selection-end-line="193" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/keyboard/__init__.py" />
     <entry file="file://$PROJECT_DIR$/scripts/keytest.py" />
     <entry file="file://$PROJECT_DIR$/launch/pos_control_pix.launch">
       <provider selected="true" editor-type-id="text-editor">
@@ -457,13 +408,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/numpy/core/fromnumeric.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/numpy/core/fromnumeric.py" />
     <entry file="file://$PROJECT_DIR$/scripts/auto.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="116">
@@ -535,8 +480,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/2dlidar.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="854">
-          <caret line="73" column="116" lean-forward="true" selection-start-line="70" selection-start-column="34" selection-end-line="73" selection-end-column="116" />
+        <state relative-caret-position="1755">
+          <caret line="73" column="116" selection-start-line="70" selection-start-column="34" selection-end-line="73" selection-end-column="116" />
           <folding>
             <element signature="e#23#35#0" expanded="true" />
           </folding>
@@ -545,8 +490,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/turtlebot_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="67" column="81" lean-forward="true" selection-start-line="67" selection-start-column="81" selection-end-line="67" selection-end-column="81" />
+        <state relative-caret-position="351">
+          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
           <folding>
             <element signature="e#1#13#0" expanded="true" />
           </folding>

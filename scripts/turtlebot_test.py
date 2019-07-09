@@ -20,12 +20,12 @@ class PosCtrl:
 
         self.maxvel = 0.5
         self.maxyaw = 0.2
-        self.yaw_threshold = 0.1
+        self.yaw_threshold = 0.001
         self.dist_threshold = 0.1
-        self.linvel_threshold = 0.01
-        self.yawrate_threshold = 0.0004
         self.dist_err = 0
         self.yaw_err = 0
+        self.yaw_flag = False
+        self.pos_flag = False
 
 
         self.desired_vel = Twist()
@@ -62,23 +62,33 @@ class PosCtrl:
 
 
 
-            if np.abs(self.yaw_err) >= self.yaw_threshold and linvel < self.linvel_threshold:
+            if np.abs(self.yaw_err) >= self.yaw_threshold and self.yaw_flag:
                 self.desired_vel.linear.x = 0
+                self.pos_flag = False
                 if np.abs(self.yaw_err) >= self.maxyaw:
                     self.desired_vel.angular.z = np.sign(self.yaw_err) * self.maxyaw
                 else:
                     self.desired_vel.angular.z = self.yaw_err
+            elif np.abs(self.yaw_err) < self.yaw_threshold:
+                self.yaw_flag = False
+                self.pos_flag = True
 
-            elif self.dist_err >= self.dist_threshold and np.abs(self.current_yawrate) < self.yawrate_threshold:
+
+            if self.dist_err >= self.dist_threshold and self.yaw_flag==False and self.pos_flag:
                 self.desired_vel.angular.z = 0
+                self.yaw_flag = False
                 if self.dist_err >= self.maxvel:
                     self.desired_vel.linear.x = self.maxvel
                 else:
                     self.desired_vel.linear.x = self.dist_err
+            elif self.dist_err < self.dist_threshold:
+                self.pos_flag = False
 
-            else:
+            if not self.yaw_flag:
                 self.desired_vel.angular.z = 0
+            if not self.pos_flag:
                 self.desired_vel.linear.x = 0
+
 
 
             self.cmd_pub.publish(self.desired_vel)
