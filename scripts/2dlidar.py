@@ -122,7 +122,7 @@ class Lidar:
 
     def gazebo_callback(self, data):
         temp = data
-        self.burger_pos = temp.pose[2]
+        self.burger_pos = temp.pose[-1]
         if self.thread_flag is False:
             self.thread_flag = True
             self.vel_thread.start()
@@ -261,7 +261,7 @@ def main():
     for _ in range(wait):
         rate.sleep()
 
-    target1 = [0.5, 2, 2, 0]
+    target1 = [0, 2, 2, 0]
 
     test.waypoint = target1
 

@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fba7ff68-753f-4162-b92b-ed54902bd841" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/scripts/turtlebot_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/2dlidar.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/2dlidar.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/2dlidar.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="695">
-              <caret line="243" column="55" selection-start-line="243" selection-start-column="55" selection-end-line="243" selection-end-column="55" />
+            <state relative-caret-position="854">
+              <caret line="73" column="116" lean-forward="true" selection-start-line="70" selection-start-column="34" selection-end-line="73" selection-end-column="116" />
               <folding>
                 <element signature="e#23#35#0" expanded="true" />
               </folding>
@@ -24,20 +26,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///opt/ros/kinetic/lib/python2.7/dist-packages/rospy/impl/tcpros_base.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/turtlebot_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="790">
-              <caret line="724" selection-start-line="724" selection-end-line="724" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file:///opt/ros/kinetic/lib/python2.7/dist-packages/rospy/topics.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="881" selection-start-line="881" selection-end-line="881" />
+            <state relative-caret-position="638">
+              <caret line="67" column="81" lean-forward="true" selection-start-line="67" selection-start-column="81" selection-end-line="67" selection-end-column="81" />
+              <folding>
+                <element signature="e#1#13#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -59,6 +55,8 @@
       <find>print</find>
       <find>desired_lpos</find>
       <find>quater</find>
+      <find>arctan2</find>
+      <find>linalg</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -94,12 +92,13 @@
         <option value="$PROJECT_DIR$/launch/vel_control_px4.launch" />
         <option value="$PROJECT_DIR$/scripts/offboard_comm.py" />
         <option value="$PROJECT_DIR$/scripts/2dlidar.py" />
+        <option value="$PROJECT_DIR$/scripts/turtlebot_test.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="667" />
-    <option name="y" value="216" />
+    <option name="x" value="884" />
+    <option name="y" value="127" />
     <option name="width" value="1933" />
     <option name="height" value="1930" />
   </component>
@@ -149,7 +148,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.2dlidar">
+  <component name="RunManager" selected="Python.turtlebot_test">
     <configuration name="2dlidar" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="px4_ros" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -213,6 +212,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="turtlebot_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="px4_ros" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/turtlebot_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="zed_node" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="px4_ros" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -234,28 +254,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pytest in /home/astra/catkin_ws/src/px4_ros/scripts/offboard_test.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="px4_ros" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/scripts/offboard_test.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.turtlebot_test" />
         <item itemvalue="Python.2dlidar" />
         <item itemvalue="Python.keytest" />
         <item itemvalue="Python.zed_node" />
         <item itemvalue="Python.posctrl" />
-        <item itemvalue="Python tests.pytest in /home/astra/catkin_ws/src/px4_ros/scripts/offboard_test.py" />
       </list>
     </recent_temporary>
   </component>
@@ -290,7 +295,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="667" y="216" width="1933" height="1930" extended-state="0" />
+    <frame x="884" y="127" width="1933" height="1930" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.186911" />
@@ -466,13 +471,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///opt/ros/kinetic/lib/python2.7/dist-packages/rospy/timer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="781">
-          <caret line="165" selection-start-line="165" selection-end-line="165" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python2.7/threading.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="346">
@@ -504,20 +502,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///opt/ros/kinetic/lib/python2.7/dist-packages/rospy/topics.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="881" selection-start-line="881" selection-end-line="881" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///opt/ros/kinetic/lib/python2.7/dist-packages/rospy/impl/tcpros_base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="790">
-          <caret line="724" selection-start-line="724" selection-end-line="724" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/offboard_comm.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="688">
@@ -528,12 +512,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///opt/ros/kinetic/lib/python2.7/dist-packages/rospy/impl/tcpros_base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20416">
+          <caret line="724" selection-start-line="724" selection-end-line="724" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///opt/ros/kinetic/lib/python2.7/dist-packages/rospy/topics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25520">
+          <caret line="881" selection-start-line="881" selection-end-line="881" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///opt/ros/kinetic/lib/python2.7/dist-packages/rospy/timer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/2dlidar.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="695">
-          <caret line="243" column="55" selection-start-line="243" selection-start-column="55" selection-end-line="243" selection-end-column="55" />
+        <state relative-caret-position="854">
+          <caret line="73" column="116" lean-forward="true" selection-start-line="70" selection-start-column="34" selection-end-line="73" selection-end-column="116" />
           <folding>
             <element signature="e#23#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/turtlebot_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="67" column="81" lean-forward="true" selection-start-line="67" selection-start-column="81" selection-end-line="67" selection-end-column="81" />
+          <folding>
+            <element signature="e#1#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
